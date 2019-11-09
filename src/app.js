@@ -4,9 +4,9 @@ const hbs = require('hbs');
 const forecast = require('./utils/forecast.js');
 const geoCode = require('./utils/geoCode.js');
 
-
-
 const app = express();
+const port = process.env.PORT || 3000 
+
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewpath = path.join(__dirname, '../templates/views');
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -81,6 +81,6 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log('Server is up and running')
 })
